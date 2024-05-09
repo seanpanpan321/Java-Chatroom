@@ -1,10 +1,10 @@
 # Chat Application
 
-This is a Java-based chat application that supports text, image, and audio messaging, along with user accounts and interactive messaging features. The application utilizes sockets for network communication and `javax.sound.sampled` for audio handling, and integrates a SQLite database for managing user data.
+This is a Java-based chatroom application that supports text, image, and audio messaging, along with user accounts and interactive messaging features. The application utilizes sockets for network communication and `javax.sound.sampled` for audio handling, and integrates a SQLite database for managing user data.
 
 ## Features
 
-- **Text Messaging**: Send and receive real-time text messages.
+- **Text Messaging**: Send and receive real-time text messages with multiple users.
 - **Image Messaging**: Share images within the chat. Supported formats include JPG.
 - **Audio Messaging**: Record and play back audio messages. Audio recording is performed through the system's default microphone.
 - **User Accounts**: Users can create accounts and log in, using the `JavaFinal.db` database.
