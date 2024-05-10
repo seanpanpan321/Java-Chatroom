@@ -162,40 +162,6 @@ class ClientFrame extends JFrame {
         setVisible(true);
     }
 
-    private void sendLogin() {
-        try {
-            outputStream.writeInt(0); // Login command
-            outputStream.writeUTF(usernameField.getText());
-            outputStream.writeUTF(new String(passwordField.getPassword())); // Send password as hashed
-            if (inputStream.readInt() == 1) {
-                // Login success
-                JOptionPane.showMessageDialog(this, "Login Successful", "Login", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                // Login failure
-                JOptionPane.showMessageDialog(this, "Login Failed", "Login", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Error sending login data", "Network Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
-    private void sendSignup() {
-        try {
-            outputStream.writeInt(1); // Signup command
-            outputStream.writeUTF(usernameField.getText());
-            outputStream.writeUTF(new String(passwordField.getPassword())); // Send password as hashed
-            if (inputStream.readInt() == 1) {
-                // Signup success
-                JOptionPane.showMessageDialog(this, "Signup Successful", "Signup", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                // Signup failure
-                JOptionPane.showMessageDialog(this, "Signup Failed", "Signup", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Error sending signup data", "Network Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
     public void setUsername(String username) {
         this.username = username;
     }
